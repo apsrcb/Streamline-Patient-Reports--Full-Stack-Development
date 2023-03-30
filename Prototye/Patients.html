@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang = "en" dir ltr>
+<center>
+  <head>
+    <style>
+      body{
+        background-image: url("back.jpg");
+        background-size: cover;
+        height: 100%;
+      }
+      h1{
+        font-size: 38px;
+        font-family: 'Times New Roman', Times, serif;
+        color:aliceblue;
+        outline-color: #0c6153;
+      }
+      .styled-table{
+        border:2px solid #0c6153;
+        border-bottom: 2px solid #0c6153;
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        align-self: center;
+        border-color: #0c6153;
+      }
+      .styled-table tr {
+        background: #0ba58c;
+        text-align: center;
+        font-size: larger;
+        color: aliceblue
+      }
+      button{
+        position:fixed;
+        right:10px;
+        top:5px;
+        background-color: #c3f9cd;
+        font-size: medium;
+        border: 2px solid #044837 ;
+        font-family: "Roboto Mono", monospace;
+      }
+      .styled-table th,.styled-table td {
+        padding: 12px 15px;
+      }
+      .styled-table tbody tr {
+        border-bottom: 1px solid #0d7573;
+      }
+      .styled-table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+      }
+      .styled-table tbody tr:last-of-type {
+        border-bottom: 2px solid #0c6153;
+      }
+      input[type='button']{
+        width: 20%;
+        background-color: #15a187;
+        color: #ffffff;
+        font-size: large;
+        border: 2px solid #0c6153 ;
+        margin-top: 1em;
+        padding: 0.8em 0;
+        border-radius: 0.4em;
+        font-family: "Roboto Mono", monospace;
+      }
+      .label {
+  color: white;
+  padding: 8px;
+}
+.success 
+{
+  background-color: rgb(149, 223, 194);
+}
+
+    </style>
+  </head>
+  <body>
+ <h1> Patient Details </h1>
+ <table class="styled-table">
+  <tr>
+    <th>Name</th>
+   
+    <th>Age </th>
+    
+    <th>Phone number</th>
+    
+    <th>Blood Group </th>
+  
+  </tr>
+  <tr> 
+    <td>tina</td>
+    <td>17</td>
+    <td>1231121</td>
+    <td>B-</td>
+  </tr>
+</table>
+<hr>
+<form>  
+  <input type="button" value="Upload New Reports" onclick="location.href='newup.html'"/>
+  <input type="button" value="View Reports" onclick="location.href='View.html'"/> 
+  <button><a href="looogin.html">LOGOUT</a></button>
+</form> 
+
+<script>
+  <p> Recently uploaded documents: </p>
+  const fs = require('fs');
+const path = require('path');
+function getLatestFile({directory, extension}, callback){
+  fs.readdir(directory, (_ , dirlist)=>{
+    const latest = dirlist.map(_path => ({stat:fs.lstatSync(path.join(directory, _path)), dir:_path}))
+      .filter(_path => _path.stat.isFile())
+      .filter(_path => extension ? _path.dir.endsWith(`.${extension}`) : 1)
+      .sort((a, b) => b.stat.mtime - a.stat.mtime)
+      .map(_path => _path.dir);
+    callback(latest[0]);
+  });
+}
+
+getLatestFile({directory:process.cwd(), extension:'mp3'}, (filename=null)=>{
+  console.log(filename);
+});
+</script>
+<hr>
+<section>
+  <form>
+    <span class="label success">Hospitals </span>
+    <select>
+    <option value = "BMW"> Care
+    </option>
+    <option value = "Mercedes"> NIMS
+    </option>
+    </select>
+  </span>
+</section>
+<section>
+  <form>
+    <label> View ~ </label>
+    <select>
+    <option value = "BMW"> Reports
+    </option>
+    <option value = "Mercedes"> Hospitalization service details
+    </option>
+  </option>
+  <option value = "Mercedes"> Prescriptions
+  </option>
+    </select>
+    </form>
+</section>
+</body>
+</center>
+</html>

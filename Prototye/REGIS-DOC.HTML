@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        *{
+	        padding: 0;
+	        margin: 0;
+	        box-sizing: border-box;
+	        font-family: 'Quicksand', sans-serif;
+        }
+        body{
+            height: 100vh;
+            width: 100%;
+        }
+        .container{
+            position: relative;
+            width: 100%;
+	        height: 100%;
+	        display: flex;
+	        justify-content: center;
+	        align-items: center;
+	        padding: 20px 100px;
+        }
+        .container:after{
+	        content: '';
+	        position: absolute;
+	        width: 100%;
+	        height: 100%;
+	        left: 0;
+	        top: 0;
+	        background: url("img/bg.jpg") no-repeat center;
+	        background-size: cover;
+	        filter: blur(50px);
+	        z-index: -1;
+        }
+.contact-box{
+	max-width: 850px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
+
+}
+
+.left{
+	background: url("https://i.pinimg.com/736x/23/ff/99/23ff9974ade813c4ae827d0253d8c4d0.jpg") no-repeat center;
+	background-size: cover;
+	height: 100%;
+}
+
+.right{
+	padding: 25px 40px;
+    background: linear-gradient(45deg, #10b480, #0c6153);
+}
+
+h1{
+	position: relative;
+	padding: 0 0 10px;
+	margin-bottom: 10px;
+    font-size:xx-large;
+    color: #3fe471;
+    outline: black;
+    outline-width: 5px;
+}
+
+h1:after{
+	content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+    background-color: #2ecc71;
+}
+
+.field{
+	width: 100%;
+	border: 2px solid rgba(0, 0, 0, 0);
+	outline: none;
+	background-color: rgba(230, 230, 230, 0.6);
+	padding: 0.5rem 1rem;
+	font-size: 1.1rem;
+	margin-bottom: 22px;
+	transition: .3s;
+}
+
+.field:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+textarea{
+	min-height: 150px;
+}
+
+.btn{
+	width: 100%;
+	padding: 0.5rem 1rem;
+	background-color: #069c44;
+	color: #fff;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+    text-decoration: none;
+}
+
+.btn:hover{
+    background-color: #035124;
+}
+
+.field:focus{
+    border: 2px solid rgba(30,85,250,0.47);
+    background-color: #fff;
+}
+
+@media screen and (max-width: 880px){
+	.contact-box{
+		grid-template-columns: 1fr;
+	}
+	.left{
+		height: 200px;
+	}
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+.button_WHO{
+    width: 100px;
+    display: inline;
+	padding: 0.5rem 1rem;
+	background-color:rgb(94, 199, 154);
+	color: rgb(255, 255, 255);
+	font-size:medium;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+    text-decoration: none;
+}
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+.login-signup{
+    width: 100px;
+    display: inline;
+	padding: 0.5rem 1rem;
+	background-color:rgb(94, 199, 154);
+	color: rgb(248, 242, 242);
+	font-size:medium;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+    text-decoration: none;
+}
+.submit-button{
+    width: 115px;
+    display: inline;
+	padding: 0.5rem 1rem;
+	background-color:rgb(94, 199, 154);
+	color: rgb(120, 62, 227);
+    outline: none;
+    border: none;
+	font-size:medium;
+	cursor: pointer;
+	transition: .3s;
+    font-style: bold;
+}
+.Selection{
+    width: 400px;
+    display: inline-block;
+	padding: 0.5rem 1rem;
+	background-color:rgb(94, 199, 154);
+	color: rgb(248, 242, 242);
+	font-size:medium;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+    text-decoration: none;    
+}
+#spec{
+    width: 180px;
+    display: inline;
+	padding: 0.5rem 1rem;
+	background-color:rgb(94, 199, 154);
+	color: black;
+    outline: none;
+    border: none;
+	font-size:medium;
+	cursor: pointer;
+	transition: .3s;
+}
+#hos{
+    width: 180px;
+    display: inline;
+	padding: 0.5rem 1rem;
+	background-color:rgb(94, 199, 154);
+	color: black;
+    outline: none;
+    border: none;
+	font-size:medium;
+	cursor: pointer;
+	transition: .3s;
+}
+    </style>
+<head>
+	<title>Register</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+</head>
+<body>
+	<div class="container">
+		<div class="contact-box">
+			<div class="left"></div>
+			<div class="right">
+				<h1>Register</h1>
+                <button class="button_WHO">
+                    <a href="REGIS.HTML" style="color:rgb(255, 255, 255)">
+                        <span class="button__text">Patient</span>
+                        <i class="button__icon fas fa-chevron-right"></i>
+                    </a>
+				</button>
+                <button class="button_WHO">
+                    <a href="REGIS-DOC.HTML" style="color:rgb(255, 255, 255)">
+                        <span class="button__text">Doctor</span>
+                        <i class="button__icon fas fa-chevron-right"></i>
+                    </a>
+				</button>
+                <br><br>
+				<input type="text" class="field" placeholder="Enter Name" required>
+				<input type="text" class="field" placeholder="Enter Email"required>
+				<input type="number" text="number" class="field" placeholder="Enter Phone Number" min="10" required>
+                <input type="number" class="field" placeholder="Enter Aadhar Number" max="12" required>
+                <div class="Selection">
+                    <label for="select">Choose a Hospital:</label>
+                    <select name="hos" id="hos">
+                    <option value="Apollo Jubilee Hills">Apollo Jubilee Hills</option>
+                    <option value="KIMS">KIMS</option>
+                    <option value="Rainbow">Rainbow</option>
+                    <option value="Sunshine">Sunshine</option>
+                    </select>
+                    <br>
+                    <label for="spec">Choose a Specialization:</label>
+                    <select name="spec" id="spec">
+                    <option value="Drmatology">Dermatology</option>
+                    <option value="Cardiology">Cardiology</option>
+                    <option value="Opthalmology">Opthalmology</option>
+                    <option value="Pediatrician">Pediatrician</option>
+                    </select> 
+                    <br>
+                </div> 
+				<a href="CONF.HTML" style="color:rgb(255, 255, 255)">
+					<button  type="button" class="btn">
+                        <span class="button__text">Register Now</span>
+                        <i class="button__icon fas fa-chevron-right"></i>
+				</button>
+				</a>       
+                <br><br>
+                <div class="login-signup">
+                    <span class="text">Already a member?
+                    <input class="submit-button" type="text login-link" value="Login Now" onclick="location.href='LOGIN.HTML'"/>                        
+                    </span>
+                </div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
