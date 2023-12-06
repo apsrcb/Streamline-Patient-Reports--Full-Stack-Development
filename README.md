@@ -67,7 +67,3 @@ Start Server using node or nodemon
 ```
 
 
-## Authors
-
-- [@sindhoori-kaza](https://github.com/sindhoori-kaza)
-- [@rithikabadam](https://github.com/rithikabadam)
